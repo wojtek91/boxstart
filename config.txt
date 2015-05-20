@@ -63,6 +63,12 @@ cinst putty
 cinst vcredist2010
 cinst vim
 cinst winscp
+cinst gow
+cinst nuget.commandline
+cinst powertab
+cinst expresso
+cinst redis-64
+cinst soapui -version 5.0.0.1
 
 cinst IIS-WebServerRole -source windowsfeatures
 cinst IIS-ManagementScriptingTools -source windowsfeatures
