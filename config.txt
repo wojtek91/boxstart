@@ -84,6 +84,7 @@ cinst curl
 cinst greenshot
 cinst vmwarevsphereclient
 cinst urlrewrite
+cinst linkshellextension
 
 cinst IIS-WebServerRole -source windowsfeatures
 cinst IIS-ManagementScriptingTools -source windowsfeatures
