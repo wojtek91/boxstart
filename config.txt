@@ -32,6 +32,15 @@ cinst sublimetext3
 cinst ConEmu
 cinst Far
 cinst Jump-Location
+#Commandline and Powershell tools
+cinst powershell
+cinst ConEmu
+cinst psget
+Install-Module posh-git
+Install-Module Jump.Location
+Install-Module PSColor
+Install-Module PSReadline
+Install-Module Find-String
 
 # Git
 cinst git
