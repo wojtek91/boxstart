@@ -30,6 +30,12 @@ cinst -y sublimetext3.packagecontrol
 cinst -y ConEmu
 cinst -y Far
 
+# Git
+cinst -y git
+cinst -y git-credential-winstore
+cinst -y gitextensions
+cinst -y gittfs
+
 #Commandline and Powershell tools
 cinst -y psget
 Install-Module posh-git
@@ -38,11 +44,6 @@ Install-Module PSColor
 Install-Module PSReadline
 Install-Module Find-String
 
-# Git
-cinst -y git
-cinst -y git-credential-winstore
-cinst -y gitextensions
-cinst -y gittfs
 
 # IDE
 cinst -y VisualStudio2013Premium -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
