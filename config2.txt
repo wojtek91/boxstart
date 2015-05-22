@@ -3,38 +3,34 @@ $Boxstarter.RebootOk=$true # Allow reboots?
 $Boxstarter.NoPassword=$false # Is this a machine with no login password?
 $Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
 
-Install-WindowsUpdate -AcceptEula
+# Basic setup
+Update-ExecutionPolicy Unrestricted
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Set-StartScreenOptions -EnableBootToDesktop -EnableDesktopBackgroundOnStart -EnableShowStartOnActiveScreen -EnableShowAppsViewOnStartScreen -EnableSearchEverywhereInAppsView -EnableListDesktopAppsFirst
+Enable-RemoteDesktop
+Disable-UAC
 
 # Windows essentials
 cinst -y powershell
 cinst -y dotnet3.5
 cinst -y dotnet4.5
 
-# Basic setup
-Update-ExecutionPolicy Unrestricted
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
-Set-StartScreenOptions -EnableBootToDesktop -EnableDesktopBackgroundOnStart -EnableShowStartOnActiveScreen -EnableShowAppsViewOnStartScreen -EnableSearchEverywhereInAppsView -EnableListDesktopAppsFirst
-Enable-RemoteDesktop
-Set-TaskbarOptions -Lock -Dock Left
-Disable-UAC
-#Disable-InternetExplorerESC
-
 #Browsers
 cinst -y google-chrome-x64
 cinst -y firefox
+cinst -y opera
 cinst -y flashplayerplugin
 
 # Editors
 cinst -y notepadplusplus
 cinst -y sublimetext3
+cinst -y sublimetext3.packagecontrol
 
 # Commandline
 cinst -y ConEmu
 cinst -y Far
-cinst -y Jump-Location
+
 #Commandline and Powershell tools
-cinst -y powershell
-cinst -y ConEmu
 cinst -y psget
 Install-Module posh-git
 Install-Module Jump.Location
@@ -47,7 +43,6 @@ cinst -y git
 cinst -y git-credential-winstore
 cinst -y gitextensions
 cinst -y gittfs
-# cinst -y poshgit
 
 # IDE
 cinst -y VisualStudio2013Premium -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
