@@ -1,0 +1,156 @@
+# Boxstarter options
+$Boxstarter.RebootOk=$true # Allow reboots?
+$Boxstarter.NoPassword=$false # Is this a machine with no login password?
+$Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
+
+Install-WindowsUpdate -AcceptEula
+
+# Windows essentials
+cinst -y powershell
+cinst -y dotnet3.5
+cinst -y dotnet4.5
+
+# Basic setup
+Update-ExecutionPolicy Unrestricted
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Set-StartScreenOptions -EnableBootToDesktop -EnableDesktopBackgroundOnStart -EnableShowStartOnActiveScreen -EnableShowAppsViewOnStartScreen -EnableSearchEverywhereInAppsView -EnableListDesktopAppsFirst
+Enable-RemoteDesktop
+Set-TaskbarOptions -Lock -Dock Left
+Disable-UAC
+#Disable-InternetExplorerESC
+
+#Browsers
+cinst -y google-chrome-x64
+cinst -y firefox
+cinst -y flashplayerplugin
+
+# Editors
+cinst -y notepadplusplus
+cinst -y sublimetext3
+
+# Commandline
+cinst -y ConEmu
+cinst -y Far
+cinst -y Jump-Location
+#Commandline and Powershell tools
+cinst -y powershell
+cinst -y ConEmu
+cinst -y psget
+Install-Module posh-git
+Install-Module Jump.Location
+Install-Module PSColor
+Install-Module PSReadline
+Install-Module Find-String
+
+# Git
+cinst -y git
+cinst -y git-credential-winstore
+cinst -y gitextensions
+cinst -y gittfs
+# cinst -y poshgit
+
+# IDE
+cinst -y VisualStudio2013Premium -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
+cinst -y VS2013SDK
+cinst -y resharper
+cinst -y NugetPackageExplorer
+cinst -y nuget.commandline
+
+# VS extensions
+Install-ChocolateyVsixPackage PowerShellTools https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597/file/160501/1/PowerShellTools.vsix
+Install-ChocolateyVsixPackage VSColorOutput https://visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496/file/63103/9/VSColorOutput.vsix
+
+# Tools
+cinst -y clink
+cinst -y windirstat
+cinst -y lockhunter
+cinst -y mysql
+cinst -y 7zip
+cinst -y spotify
+cinst -y autohotkey
+cinst -y sysinternals
+cinst -y fiddler4
+cinst -y sumatrapdf
+cinst -y f.lux
+cinst -y javaruntime
+cinst -y dotpeek
+cinst -y grepwin 
+cinst -y IrfanView
+cinst -y irfanviewplugins
+cinst -y kdiff3 
+cinst -y Listary
+cinst -y paint.net
+cinst -y putty
+cinst -y vcredist2010
+cinst -y vim
+cinst -y winscp
+cinst -y gow
+cinst -y powertab
+cinst -y expresso
+cinst -y redis-64
+cinst -y soapui -version 5.0.0.1
+cinst -y curl
+cinst -y greenshot
+cinst -y vmwarevsphereclient
+cinst -y urlrewrite
+cinst -y linkshellextension
+
+cinst -y IIS-WebServerRole -source windowsfeatures
+cinst -y IIS-ManagementScriptingTools -source windowsfeatures
+cinst -y IIS-WindowsAuthentication -source windowsfeatures
+cinst -y NetFx3 -source windowsfeatures
+cinst -y IIS-WebServerRole -source windowsfeatures
+cinst -y IIS-WebServer -source windowsfeatures
+cinst -y IIS-CommonHttpFeatures -source windowsfeatures
+cinst -y IIS-HttpErrors -source windowsfeatures
+cinst -y IIS-HttpRedirect -source windowsfeatures
+cinst -y IIS-ApplicationDevelopment -source windowsfeatures
+cinst -y IIS-NetFxExtensibility -source windowsfeatures
+cinst -y IIS-NetFxExtensibility45 -source windowsfeatures
+cinst -y IIS-HealthAndDiagnostics -source windowsfeatures
+cinst -y IIS-HttpLogging -source windowsfeatures
+cinst -y IIS-LoggingLibraries -source windowsfeatures
+cinst -y IIS-RequestMonitor -source windowsfeatures
+cinst -y IIS-HttpTracing -source windowsfeatures
+cinst -y IIS-Security -source windowsfeatures
+cinst -y IIS-RequestFiltering -source windowsfeatures
+cinst -y IIS-Performance -source windowsfeatures
+cinst -y IIS-HttpCompressionDynamic -source windowsfeatures
+cinst -y IIS-WebServerManagementTools -source windowsfeatures
+cinst -y IIS-ManagementScriptingTools -source windowsfeatures
+cinst -y IIS-IIS6ManagementCompatibility -source windowsfeatures
+cinst -y IIS-Metabase -source windowsfeatures
+cinst -y WAS-WindowsActivationService -source windowsfeatures
+cinst -y WAS-ProcessModel -source windowsfeatures
+cinst -y WAS-NetFxEnvironment -source windowsfeatures
+cinst -y WAS-ConfigurationAPI -source windowsfeatures
+cinst -y IIS-WindowsAuthentication -source windowsfeatures
+cinst -y IIS-StaticContent -source windowsfeatures
+cinst -y IIS-DefaultDocument -source windowsfeatures
+cinst -y IIS-DirectoryBrowsing -source windowsfeatures
+cinst -y IIS-ASPNET45 -source windowsfeatures
+cinst -y IIS-ASP -source windowsfeatures
+cinst -y IIS-ISAPIExtensions -source windowsfeatures
+cinst -y IIS-ISAPIFilter -source windowsfeatures
+cinst -y IIS-HttpCompressionStatic -source windowsfeatures
+cinst -y IIS-ManagementConsole -source windowsfeatures
+cinst -y IIS-LegacySnapIn -source windowsfeatures
+cinst -y MSMQ-Container -source windowsfeatures
+cinst -y MSMQ-Server -source windowsfeatures
+cinst -y WCF-Services45 -source windowsfeatures
+cinst -y WCF-HTTP-Activation45 -source windowsfeatures
+cinst -y WCF-TCP-PortSharing45 -source windowsfeatures
+cinst -y WCF-HTTP-Activation -source windowsfeatures
+cinst -y NetFx4Extended-ASPNET45 -source windowsfeatures
+cinst -y TelnetClient -source windowsfeatures
+
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe"
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles)\Far Manager\ConEmu64.exe"
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Skype\Phone\Skype.exe"
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\GitExtensions\GitExtensions.exe"
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe"
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Notepad++\Notepad++.exe"
+
+Install-WindowsUpdate -acceptEula
+
+Update-ExecutionPolicy RemoteSigned
