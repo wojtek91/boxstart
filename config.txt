@@ -89,6 +89,7 @@ cinst -y greenshot
 cinst -y vmwarevsphereclient
 cinst -y urlrewrite
 cinst -y linkshellextension
+cinst -y libreoffice
 
 cinst -y IIS-WebServerRole -source windowsfeatures
 cinst -y IIS-ManagementScriptingTools -source windowsfeatures
