@@ -47,7 +47,7 @@ cinst -y gitextensions
 cinst -y gittfs
 
 # IDE
-#cinst -y VisualStudio2013Premium -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
+#cinst -y visualstudiocommunity2013 -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
 #cinst -y VS2013SDK
 cinst -y resharper -version 8.2.3000.5176
 cinst -y NugetPackageExplorer
