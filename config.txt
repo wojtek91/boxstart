@@ -19,9 +19,6 @@ Disable-UAC
 #Disable-InternetExplorerESC
 
 #Browsers
-cinst -y google-chrome-x64
-cinst -y firefox
-cinst -y opera
 cinst -y flashplayerplugin
 
 # Editors
@@ -35,6 +32,10 @@ cinst -y Far
 #Commandline and Powershell tools
 cinst -y psget
 Install-Module posh-git
+Install-Module PowerLS
+Install-Module pscx
+Install-Module PSUrl
+Install-Module Pester
 Install-Module Jump.Location
 Install-Module PSColor
 Install-Module PSReadline
@@ -44,52 +45,56 @@ Install-Module Find-String
 cinst -y git
 cinst -y git-credential-winstore
 cinst -y gitextensions
-cinst -y gittfs
 
 # IDE
-cinst -y visualstudiocommunity2013 -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
-cinst -y VS2013SDK
-cinst -y resharper -version 8.2.3000.5176
+#cinst -y visualstudiocommunity2013 -InstallArguments "/Features:'VC_MFC_Libraries OfficeDeveloperTools SQL WebTools'"
+#cinst -y VS2013SDK
+#cinst -y resharper -version 8.2.3000.5176
 cinst -y NugetPackageExplorer
 cinst -y nuget.commandline
 
 # VS extensions
-Install-ChocolateyVsixPackage PowerShellTools https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597/file/160501/1/PowerShellTools.vsix
-Install-ChocolateyVsixPackage VSColorOutput https://visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496/file/63103/9/VSColorOutput.vsix
+#Install-ChocolateyVsixPackage PowerShellTools https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597/file/160501/1/PowerShellTools.vsix
+#Install-ChocolateyVsixPackage VSColorOutput https://visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496/file/63103/9/VSColorOutput.vsix
 
 # Tools
-cinst -y clink
-cinst -y lockhunter
 cinst -y 7zip
-cinst -y spotify
 cinst -y autohotkey
-cinst -y sysinternals
-cinst -y fiddler4
-cinst -y sumatrapdf
-cinst -y f.lux
-cinst -y javaruntime
+cinst -y clink
+cinst -y dependencywalker
 cinst -y dotpeek
+cinst -y dropbox
+cinst -y expresso
+cinst -y f.lux
+cinst -y fiddler4
+cinst -y gow
 cinst -y grepwin 
+cinst -y heidisql 
 cinst -y IrfanView
 cinst -y irfanviewplugins
+cinst -y javaruntime
 cinst -y kdiff3 
+cinst -y linkshellextension
 cinst -y Listary
+cinst -y lockhunter
+cinst -y msbuild.communitytasks
+cinst -y nodejs
+cinst -y npm
 cinst -y paint.net
+cinst -y powertab
 cinst -y putty
+cinst -y python
+cinst -y scriptcs
+#cinst -y spotify
+cinst -y sumatrapdf
+cinst -y sysinternals
 cinst -y vcredist2010
 cinst -y vim
-cinst -y winscp
-cinst -y gow
-cinst -y powertab
-cinst -y expresso
-cinst -y redis-64
-cinst -y soapui -version 5.0.0.1
-cinst -y curl
-cinst -y greenshot
 cinst -y vmwarevsphereclient
-cinst -y urlrewrite
-cinst -y linkshellextension
-cinst -y libreoffice
+cinst -y windirstat
+cinst -y winmerge
+cinst -y winscp
+cinst -y wireshark
 
 cinst -y IIS-WebServerRole -source windowsfeatures
 cinst -y IIS-ManagementScriptingTools -source windowsfeatures
