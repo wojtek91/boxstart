@@ -43,7 +43,7 @@ Install-Module Find-String
 
 # Git
 cinst -y git
-cinst -y git-credential-winstore
+cinst -y Git-Credential-Manager-for-Windows
 cinst -y gitextensions
 
 # IDE
